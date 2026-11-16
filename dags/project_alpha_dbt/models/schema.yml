@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: raport_premium
+    description: "Table contains products priced over 200 PLN"
+    columns:
+      - name: id
+        description: "Unique product ID"
+        tests:
+          - unique
+          - not_null
+
+      - name: tytul
+        description: "Product name/title"
+        tests:
+          - not_null

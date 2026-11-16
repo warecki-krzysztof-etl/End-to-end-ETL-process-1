@@ -1,0 +1,16 @@
+# Cache i pliki tymczasowe Pythona
+__pycache__/
+.pytest_cache/
+
+# Logi Dockera/Airflow
+logs/
+
+# Środowisko wirtualne Pythona/dbt
+dbt-env/
+
+# Ustawienia lokalne edytora VS Code
+.vscode/
+
+# HASŁA I SEKRETY - Zastąp właściwą nazwą!
+*.env
+*.log
