@@ -76,6 +76,40 @@ docker compose down
 docker compose up -d
 ```
 
+### 3. Access the Airflow UI
+
+1. Open your browser and go to: `http://localhost:8085`
+2. Log in using the default development credentials:
+   - **Username:** `airflow`
+   - **Password:** `dataenv2026`
+
+### 4. Configure AWS Connection
+
+Before running the DAG, you need to provide Airflow with your AWS credentials to enable the S3 backup task:
+1. In the Airflow UI, go to **Admin** -> **Connections**.
+2. Click the **+** (Add a new record) button.
+3. Fill in the form:
+   - **Connection Id:** `project-alpha-aws-conn`
+   - **Connection Type:** `Amazon Web Services`
+   - **AWS Access Key ID:** *(your-access-key)*
+   - **AWS Secret Access Key:** *(your-secret-key)*
+4. Click **Save**.
+
+### 5. Trigger the Pipeline
+
+1. Go back to the **DAGs** page.
+2. Search for `Project_Alpha_Test_Dag_S3`.
+3. Unpause the DAG by clicking the toggle button on the left.
+4. Click the **Play** button (Trigger DAG) on the right side to start the pipeline.
+5. Click on the DAG name and go to the **Graph** or **Grid** view to watch the tasks succeed in real-time!
+
+### 6. Stop the Environment
+
+When you are done, you can stop the containers and clean up the resources by running:
+
+```bash
+docker compose down -v
+```
 ## 👤 Author
 
 **Krzysztof Warecki**
